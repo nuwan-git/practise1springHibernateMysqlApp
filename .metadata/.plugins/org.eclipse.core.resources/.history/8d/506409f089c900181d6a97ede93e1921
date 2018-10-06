@@ -1,0 +1,17 @@
+package jks.net.cnr.dao;
+
+import java.util.List;
+
+import jks.net.cnr.dto.Employee;
+
+public interface EmployeeDao {
+
+	public List<Employee> getAllEmployee();
+	public List<Employee> getActiveEmployee();
+	public Employee getEmployeeById(Integer id);
+
+	
+	public boolean createEmployee(Employee employee);
+	public boolean updateEmployee(Employee employee);
+	public boolean deleteEmployee(Employee employee);
+}

@@ -1,0 +1,5 @@
+package net.cnr.projectJKCSBackEnd.config;
+
+public class HibernateConfigurations {
+
+}

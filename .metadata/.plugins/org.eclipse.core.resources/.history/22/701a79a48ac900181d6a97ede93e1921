@@ -1,0 +1,69 @@
+package net.cnr.projectJKCSBackEnd.test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import net.cnr.projectJKCSBackEnd.dao.EmployeeDao;
+import net.cnr.projectJKCSBackEnd.dto.Employee;
+
+public class TestEmployee {
+
+	
+private static AnnotationConfigApplicationContext context;
+	
+	@Autowired
+	private static EmployeeDao employeeDao;
+	
+	private Employee employee;
+	
+	
+	@BeforeClass
+	public static void init() {
+		
+		context = new AnnotationConfigApplicationContext();
+		context.scan("net.cnr.projectJKCSBackEnd");
+		context.refresh();
+		employeeDao = (EmployeeDao) context.getBean("employeeDao");
+		
+	}
+	
+	@Test
+	public void testAddEmployee() {
+		employee = new Employee();
+		employee.setName("Arjun");
+		employee.setActive(true);
+		assertEquals(true, employeeDao.createEmployee(employee));
+		
+	}
+
+	
+	/*@Test
+	public void testGetAllEmployee() {
+		assertEquals(3, employeeDao.getAllEmployee().size());
+	}*/
+	
+	/*@Test
+	public void testGetAllActiveEmployee() {
+		assertEquals(1, employeeDao.getActiveEmployee().size());
+	}*/
+	
+	/*@Test
+	public void tstUpdateEmployee(){
+		employee =employeeDao.getEmployeeById(5);
+		employee.setActive(true);
+		
+		assertEquals(true,employeeDao.updateEmployee(employee));
+	}
+*/
+	/*@Test
+	public void testDeleteEmployee(){
+		employee =employeeDao.getEmployeeById(5);
+
+		assertEquals(true,employeeDao.deleteEmployee(employee));
+	}*/
+	
+}

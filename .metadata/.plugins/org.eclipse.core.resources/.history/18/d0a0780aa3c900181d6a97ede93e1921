@@ -1,0 +1,47 @@
+package net.cnr.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import net.cnr.projectJKCSBackEnd.dao.EmployeeDao;
+import net.cnr.projectJKCSBackEnd.dto.Employee;
+
+@Controller
+@RequestMapping("/employee")
+public class EmployeeController {
+	
+	@Autowired
+	private EmployeeDao employeeDao;
+	
+	@RequestMapping( value = {"/"})
+	public ModelAndView index() {
+		
+		ModelAndView mv = new ModelAndView("EmployeeView");
+		mv.addObject("title", "Employeee Management");
+		
+		mv.addObject("employees", employeeDao.getActiveEmployee());
+		return mv;
+		
+	}
+	
+	@RequestMapping(value = "/employee/add", method=RequestMethod.POST)
+	public String addEmployee(@ModelAttribute Employee employee) {
+		System.out.println(employee);
+		if(employee.getId() == 0) {
+			employeeDao.createEmployee(employee);
+		} else {
+			employeeDao.updateEmployee(employee);
+		}
+		
+		return "redirect:/";
+		
+		
+	}
+
+}

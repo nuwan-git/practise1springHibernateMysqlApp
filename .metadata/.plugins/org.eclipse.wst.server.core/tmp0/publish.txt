@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Sun Oct 07 03:07:33 IST 2018
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Nuwan\\.m2\\repository\\org\\springframework\\spring-web\\4.3.6.RELEASE\\spring-web-4.3.6.RELEASE.jar=C\:\\Users\\Nuwan\\Downloads\\Compressed\\apache-tomcat-8.0.53-windows-x64\\apache-tomcat-8.0.53\\wtpwebapps\\projectJKCS\\WEB-INF\\lib\\spring-web-4.3.6.RELEASE.jar
+org.eclipse.jst.jee.server\:projectJKCS=C\:\\Users\\Nuwan\\Downloads\\Compressed\\apache-tomcat-8.0.53-windows-x64\\apache-tomcat-8.0.53\\wtpwebapps\\projectJKCS
+org.eclipse.jst.j2ee.server\:projectJKCSBackEnd=C\:\\Users\\Nuwan\\Downloads\\Compressed\\apache-tomcat-8.0.53-windows-x64\\apache-tomcat-8.0.53\\wtpwebapps\\projectJKCS\\WEB-INF\\lib\\projectJKCSBackEnd-0.0.1-SNAPSHOT.jar

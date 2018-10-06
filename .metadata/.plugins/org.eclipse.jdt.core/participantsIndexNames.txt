@@ -1,0 +1,5 @@
+INDEX VERSION 1.130
+E:\projects\practiseForJKCS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\255590241.index
+\projectJKCS\src\main\resources
+E:\projects\practiseForJKCS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\736622611.index
+\projectJKCS\src\main\java
